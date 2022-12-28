@@ -87,18 +87,32 @@ return account;
 
 }
 
+public static void updateAccountBalance(int accountId, double balance){
+  String sql = "update accounts set balance = ? where id = ?";
+  try ( Connection connection = connect();
+    PreparedStatement statement = connection.prepareStatement(sql)){
+
+      statement.setDouble(1, balance);
+      statement.setInt(2, accountId);
+
+      statement.executeUpdate();
+    }catch (SQLException e) {
+    e.printStackTrace();
+    // TODO: handle exception
+  }
+}
 
 ///////////////////////////  Main //////////////////////////////////////////
 
-
-  public static void main(String[] args){
-   Customer customer =getCustomer("bdowsh4@mozilla.com");
-    System.out.println(customer.getAccount_Id());
-    System.out.println(customer.getName());
-
-    Accounts accounts = getAccounts(customer.getAccount_Id());
-    System.out.println(accounts.getBalance());
-    System.out.println(accounts.getId());
-  }
-
+/*
+ * public static void main(String[] args){
+ * Customer customer =getCustomer("bdowsh4@mozilla.com");
+ * System.out.println(customer.getAccount_Id());
+ * System.out.println(customer.getName());
+ * 
+ * Accounts accounts = getAccounts(customer.getAccount_Id());
+ * System.out.println(accounts.getBalance());
+ * System.out.println(accounts.getId());
+ * }
+ */
 }
