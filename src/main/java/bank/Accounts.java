@@ -1,5 +1,7 @@
 package bank;
 
+import bank.exceptions.AmountException;
+
 public class Accounts {
   
   private int id;
@@ -31,6 +33,21 @@ public class Accounts {
   }
   public void setBalance(double balance) {
     this.balance = balance;
+  }
+
+  public void deposit(double amount) throws AmountException{
+    // a bit of error checking to make sure the input is valid eg. amoung is not zero or -number
+    // there is a built-in java exceptions or you can create your own custom exception
+    if (amount < 1){
+      throw new AmountException("The minimun deposit us 1.00");
+
+    }else{
+      double newBalance = balance + amount;
+      setBalance(newBalance);
+    }
+  }
+  public void withdraw(double amount){
+
   }
 
   
