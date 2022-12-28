@@ -2,7 +2,7 @@ package bank;
 
 import javax.security.auth.login.LoginException;
 
-public class Authenticator {
+public class Authenticator { 
   public static Customer logIn(String username, String password)throws LoginException{
 //call getCustomer method from our DataSource class
 //the method is static we dont neeed to instantiate a data source object to access the method
