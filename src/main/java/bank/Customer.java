@@ -7,6 +7,9 @@ public class Customer {
   private String username;
   private String password;
   private int account_Id;
+  // create field to Authenticate LogIn It was not create at the begining
+  private boolean authenticated; //genrate gettters and setters 
+
 
   public Customer(int id, String name, String password, String username, int account_Id){
     setId(id);
@@ -14,6 +17,7 @@ public class Customer {
     setUsername(username);
     setPassword(password);
     setAccount_Id(account_Id);
+    setAuthenticated(false);
 
 
   }
@@ -47,6 +51,14 @@ public class Customer {
   }
   public void setAccount_Id(int account_Id) {
     this.account_Id = account_Id;
+  }
+  
+  public boolean isAuthenticated() {
+    return authenticated;
+  }
+
+  public void setAuthenticated(boolean authenticated){
+    this.authenticated = authenticated;
   }
 
   
