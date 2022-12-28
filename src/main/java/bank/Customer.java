@@ -6,14 +6,14 @@ public class Customer {
   private String name;
   private String username;
   private String password;
-  private int accountId;
+  private int account_Id;
 
-  public Customer(int id, String name, String password, String username, int accountId){
+  public Customer(int id, String name, String password, String username, int account_Id){
     setId(id);
     setName(name);
     setUsername(username);
     setPassword(password);
-    setAccountId(accountId);
+    setAccount_Id(account_Id);
 
 
   }
@@ -42,11 +42,11 @@ public class Customer {
   public void setPassword(String password) {
     this.password = password;
   }
-  public int getAccountId() {
-    return accountId;
+  public int getAccount_Id() {
+    return account_Id;
   }
-  public void setAccountId(int accountId) {
-    this.accountId = accountId;
+  public void setAccount_Id(int account_Id) {
+    this.account_Id = account_Id;
   }
 
   
