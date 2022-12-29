@@ -94,11 +94,12 @@ public static void updateAccountBalance(int accountId, double balance){
 
       statement.setDouble(1, balance);
       statement.setInt(2, accountId);
-
+      // this method makes changes to the db 
       statement.executeUpdate();
+
     }catch (SQLException e) {
     e.printStackTrace();
-    // TODO: handle exception
+   
   }
 }
 

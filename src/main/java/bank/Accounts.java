@@ -44,6 +44,8 @@ public class Accounts {
     }else{
       double newBalance = balance + amount;
       setBalance(newBalance);
+      //Call the deposit as well to update the db
+      DataSource.updateAccountBalance(id, newBalance);
     }
   }
   public void withdraw(double amount){
